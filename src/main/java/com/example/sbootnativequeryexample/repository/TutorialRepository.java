@@ -12,4 +12,7 @@ public interface TutorialRepository extends JpaRepository<Tutorial, Long> {
 
   @Query(value = "SELECT * FROM tutorials t WHERE t.published = ?1", nativeQuery = true)
   List<Tutorial> findByPublished(boolean isPublished);
+
+  @Query(value = "SELECT * FROM tutorials t WHERE t.title LIKE %?1%", nativeQuery = true)
+  List<Tutorial> findByTitleLike(String title);
 }

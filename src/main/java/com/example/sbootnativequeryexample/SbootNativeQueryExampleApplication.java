@@ -20,7 +20,12 @@ public class SbootNativeQueryExampleApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    List<Tutorial> tutorials = tutorialRepository.findByPublished(true);
+    /* Buscar por valor de columna published */
+    // List<Tutorial> tutorials = tutorialRepository.findByPublished(true);
+    // show(tutorials);
+
+    /* Buscar por valor que sigue un patrón */
+    List<Tutorial> tutorials = tutorialRepository.findByTitleLike("Java");
     show(tutorials);
   }
 
