@@ -25,7 +25,12 @@ public class SbootNativeQueryExampleApplication implements CommandLineRunner {
     // show(tutorials);
 
     /* Buscar por valor que sigue un patrón */
-    List<Tutorial> tutorials = tutorialRepository.findByTitleLike("Java");
+    // List<Tutorial> tutorials = tutorialRepository.findByTitleLike("Java");
+    // show(tutorials);
+
+    /* Buscar por valor que sigue un patrón, en minúsculas,
+       tanto el que se busca como el que se encuentra */
+    List<Tutorial> tutorials = tutorialRepository.findByTitleLikeCaseInsensitive("Python");
     show(tutorials);
   }
 
